@@ -19,7 +19,7 @@ module.exports = async (self, app, metadata) => {
   const $BASE = 'section > div:nth-child(3) > div:nth-of-type(4) > div:nth-of-type(2)'
   await page.waitForSelector($BASE)
   
-  let types = ['icon', 'promoGraphic', 'phoneScreenshots']
+  let types = ['icon', 'featureGraphic', 'phoneScreenshots']
   for (let type of types){
     if (metadata[type]) {
       console.log(tag, 'Uploading image', chalk.green(type))
@@ -49,7 +49,7 @@ async function uploadMarketListingPlaceImage(self, type, files) {
       sizes: [{width: 512, height: 512}],
       selector: `${BASE} > div:nth-of-type(3) > div:nth-child(1) input[type="file"]`,
     },
-    promoGraphic: {
+    featureGraphic: {
       sizes: [{width: 1024, height: 500}],
       selector: `${BASE} > div:nth-of-type(3) > div:nth-child(2) input[type="file"]`
     },
