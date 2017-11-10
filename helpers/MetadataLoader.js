@@ -69,7 +69,7 @@ module.exports = async (pathOrJson) => {
       break
     }
 
-    metadata.apk = await loadTextOrDefault(rootDir, 'package_name.txt') || await loadFilePathByMatch(rootDir, '*.apk', null)
+    metadata.apk = await loadTextOrDefault(rootDir, 'package-name.txt') || await loadFilePathByMatch(rootDir, '*.apk', null)
   }
 
   if (!metadata) {
